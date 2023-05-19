@@ -113,7 +113,7 @@
                                             <div class="note-content">
                                                 <p class="note-title"
                                                    data-noteTitle="Meeting with Kelly">{{ $note->title }}
-                                                    - {{ $note->appointment->fullname }}</p>
+                                                    - {{ $note->appointment->fullname ?? '' }}</p>
                                                 <p class="meta-time">{{ \Carbon\Carbon::parse($note->created_at)->translatedFormat("d F Y") }}</p>
                                                 <div class="note-description-content">
                                                     <p class="note-description"
