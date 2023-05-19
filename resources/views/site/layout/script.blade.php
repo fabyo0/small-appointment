@@ -62,6 +62,3 @@
     @endif
 
 </script>
-
-<script src="//code.jivosite.com/widget/L3RjPcEkLy" async></script>
-
