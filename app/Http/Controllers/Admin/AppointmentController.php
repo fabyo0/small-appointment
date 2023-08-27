@@ -34,23 +34,12 @@ class AppointmentController extends Controller
             'appointment' => $appointment
         ]);
     }
-
-/*    public function store(AppointmentStoreRequest $request)
-    {
-        // appointment_date
-
-        Appointment::create($request->all());
-
-        return Redirect::route('front.home')
-            ->with('success', 'Randevu Talebiniz Başarıyla Oluşturuldu');
-    }*/
-
+    
     public function store(AppointmentStoreRequest $request)
     {
         $appointmentDate = $request->input('appointment_date');
         $currentDateTime = now();
 
-        // Randevu saatinin şu anki zamandan küçük olup olmadığını kontrol et
         if ($appointmentDate < $currentDateTime) {
             return redirect()->route('front.home')
                 ->with('error', 'Geçmiş bir randevu tarihi seçemezsiniz.');
