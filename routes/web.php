@@ -86,7 +86,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
     Route::delete('/contact/{contact}',[ContactController::class,'destroy'])->name('contact.destroy');
 
     //General Settings
-    Route::resource('/settings', SettingsController::class);
+    Route::resource('/settings', SettingsController::class)->only(['index','update']);
 
     // Article
     Route::resource('/article', ArticleController::class)->except('show');
