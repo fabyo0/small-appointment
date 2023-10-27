@@ -59,7 +59,6 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
 
     //Appointment
     Route::resource('/appointment', AppointmentController::class)
-        ->withoutMiddleware('auth')
         ->only(['show', 'store', 'index', 'destroy'])
         ->withoutMiddleware('auth');
 
